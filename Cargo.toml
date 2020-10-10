@@ -1,0 +1,26 @@
+[package]
+name = "resvg-raqote"
+version = "0.10.1"
+authors = ["Reizner Evgeniy <razrfalcon@gmail.com>"]
+keywords = ["svg", "render", "raster"]
+license = "MPL-2.0"
+edition = "2018"
+description = "Patched resvg-raqote reupload until resvg uses tiny-skia 0.2.0"
+repository = "https://github.com/Gelbpunkt/resvg"
+
+[badges]
+travis-ci = { repository = "Gelbpunkt/resvg" }
+
+[dependencies]
+jpeg-decoder = { version = "0.1", default-features = false }
+log = "0.4"
+pico-args = "0.3"
+png = { version = "0.16", default-features = false } # the same version as used by raqote
+raqote = { version = "0.8", default-features = false }
+rgb = "0.8"
+svgfilters = "0.1"
+usvg = { version = "0.10", default-features = false }
+
+[features]
+default = ["text"]
+text = ["usvg/text"] # enables SVG Text support
